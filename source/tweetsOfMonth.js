@@ -7,6 +7,8 @@ export const tweetsOfMonth = [
   "A vida é cheia de surpresas maravilhosas. Esteja aberto para recebê-las. 🎁 #Surpresas",
   "Não tenha medo de falhar; veja isso como uma oportunidade de aprender e crescer. 📈 #Crescimento",
   "A gratidão transforma o que temos em suficiente. 🙏 #Gratidão",
+  "Aproveite o dia para fazer algo gentil por alguém. Pequenos gestos fazem a diferença. 🤗 #Bondade",
+  "A imaginação é o limite. O que você vai criar hoje? 🌟 #Criatividade",
   "Seja a mudança que você deseja ver no mundo. 👏 #Mudança",
   "Lembre-se de cuidar de si mesmo hoje. Sua saúde mental é importante. ❤️ #AutoCuidado",
   "Sua jornada é única e especial. Aproveite cada passo dela. 🌈 #Jornada",

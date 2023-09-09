@@ -11,17 +11,22 @@ on:
       - main
 
 jobs:
-  build:
+  tweet:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          
       - name: Install dependencies
         run: npm install
+        
+      - name: Tweet
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET: ${{ secrets.API_SECRET }}
@@ -29,7 +34,7 @@ jobs:
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
           BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
           APP_ID: ${{ secrets.APP_ID }}
+          
       - name: Generate and send tweet
         run: |
           npm run generateTweetForToday
-      - name: Tweet

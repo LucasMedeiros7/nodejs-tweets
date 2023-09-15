@@ -1,37 +1,37 @@
-name: Node.js CI
+# name: Node.js CI
 
-on:
-  schedule:
-    - cron: "0 11 * * *"
-  push:
-    branches:
-      - main
+# on:
+#   schedule:
+#     - cron: "0 11 * * *"
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  tweet:
-    runs-on: ubuntu-latest
+# jobs:
+#   tweet:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: "16"
           
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
         
-      - name: Configure environment variables
-        run: |
-          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
-          echo "API_SECRET=${{ secrets.API_SECRET }}" >> $GITHUB_ENV
-          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> $GITHUB_ENV
-          echo "ACCESS_SECRET=${{ secrets.ACCESS_SECRET }}" >> $GITHUB_ENV
-          echo "BEARER_TOKEN=${{ secrets.BEARER_TOKEN }}" >> $GITHUB_ENV
-          echo "APP_ID=${{ secrets.APP_ID }}" >> $GITHUB_ENV
+#       - name: Configure environment variables
+#         run: |
+#           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+#           echo "API_SECRET=${{ secrets.API_SECRET }}" >> $GITHUB_ENV
+#           echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> $GITHUB_ENV
+#           echo "ACCESS_SECRET=${{ secrets.ACCESS_SECRET }}" >> $GITHUB_ENV
+#           echo "BEARER_TOKEN=${{ secrets.BEARER_TOKEN }}" >> $GITHUB_ENV
+#           echo "APP_ID=${{ secrets.APP_ID }}" >> $GITHUB_ENV
           
-      - name: Generate and send tweet
-        run: |
-          npm run generateTweetForToday
+#       - name: Generate and send tweet
+#         run: |
+#           npm run generateTweetForToday

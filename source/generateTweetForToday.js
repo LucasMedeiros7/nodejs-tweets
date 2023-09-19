@@ -6,13 +6,13 @@ function generateTweetForToday() {
   const currentDayOfMonth = currentDate.getDate();
 
   if (currentDayOfMonth >= 1 && currentDayOfMonth <= tweetsOfMonth.length) {
-    const tweetDoDia = tweetsOfMonth[currentDayOfMonth - 1];
-    return tweetDoDia;
+    const tweetOfToday = tweetsOfMonth[currentDayOfMonth - 1];
+    return tweetOfToday;
   } else {
-    return "Desculpe, não há um tweet programado para hoje.";
+    return "Sorry, tweet for today was not found.";
   }
 }
 
-const tweetDoDiaAtual = generateTweetForToday();
+const tweetOfTodayAtual = generateTweetForToday();
 
-sendTweet(tweetDoDiaAtual)
+sendTweet(tweetOfTodayAtual)
